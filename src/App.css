@@ -1,38 +1,104 @@
+:root {
+  --color-primary: #ededed;
+  --color-secondary: #c2caca88;
+  --color-modal: #ededed;
+  --color-title: #212529;
+}
+
+.dark {
+  --color-primary: #212529;
+  --color-secondary: #586573;
+  --color-modal: #414952;
+  --color-title: #bfd0e6;
+}
+
 .App {
   text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-title);
+  height: 100%;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  font-family: "Signika Negative", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.register,
+.login {
+  background-color: var(--color-primary);
+  color: var(--color-title);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.set-modal .modal-content,
+form {
+  background-color: var(--color-modal);
+  color: var(--color-title);
+
+  .form-control,
+  .form-select {
+    background-color: var(--color-modal);
+    color: var(--color-title);
+  }
+
+  .form-control:not(:placeholder-shown)~label::after,
+  .form-control~label::after {
+    background-color: var(--color-secondary);
+  }
+
+  .form-control:not(:placeholder-shown)~label,
+  .form-control:placeholder-shown~label {
+    color: var(--color-title);
+  }
+
+  .form-select:not(:placeholder-shown)~label::after,
+  .form-select~label::after {
+    background-color: var(--color-secondary);
+  }
+
+  .form-select:not(:placeholder-shown)~label,
+  .form-select:placeholder-shown~label {
+    color: var(--color-title);
+  }
+}
+.passIcon {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  top: 12px;
+}
+
+.profileImg {
+  cursor: pointer;
+
+  &&:hover {
+    opacity: 0.3;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.google_btn {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #2c444e;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.google_btn>img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.google_btn>span {
+  margin-left: 10px;
 }
